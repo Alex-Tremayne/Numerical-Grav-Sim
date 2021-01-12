@@ -1,5 +1,5 @@
 class particle:
-    def init(self, coord, velocity, mass, radius):
+    def __init__(self, coord, velocity, mass, radius):
         self.coord = coord
         self.velocity = velocity
         self.mass = mass
