@@ -1,4 +1,5 @@
 import particle
+import physics
 import numpy as np
 
 
@@ -18,7 +19,14 @@ def initialise(num_particles, bounds, velocity, mass, radius=1):
 
 
 
-particles = initialise(10, np.array([10, 10]), np.array([10, 10]), 10)
+particles = initialise(10, np.array([10.0, 10.0]), np.array([10.0, 10.0]), 10.0)
 print(particles.size)
 for item in particles:
 	print(item.coord)
+
+
+for x in range(100): 
+	physics.eulerSemiImplicit(1,0.001,particles)
+	print("Time: " + str(x * 0.001))
+	for particle in particles:
+		print(particle.coord)
